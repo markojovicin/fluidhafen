@@ -81,6 +81,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
  .g4{grid-template-columns:1fr 1fr;gap:12px}.g4 .card{padding:18px}.stat b{font-size:20px}
  nav .btn{padding:9px 14px;font-size:13px}
 }
+.card img.ph{width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:50% 20%;border-radius:14px;margin-bottom:16px;display:block}
+.person{display:flex;gap:22px;align-items:center}.person img.ph{width:170px;flex:none;margin:0}
+@media (max-width:560px){.team{grid-template-columns:1fr}.person{flex-direction:column;align-items:stretch;gap:16px}.person img.ph{width:100%;aspect-ratio:1/1}}
 </style></head><body>
 
 <nav><div class="wrap"><a href="#top"><img src="logo_white.png" alt="TechHafen FluidLab"></a>
@@ -142,9 +145,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
 <section id="team"><div class="wrap">
 <div class="kicker">Team</div><h2>Ingenieur-Wissen. <span class="grad">Praktiker-Hände.</span></h2>
-<div class="grid g4">
-<div class="card"><div class="av">M</div><h3>Marko Jovicin</h3><p>Dipl.-Ing. Maschinenbau. Praxis im Service von Gastechnik, unter anderem als Serviceleiter. Heute hauptberuflich Ingenieur.</p></div>
-<div class="card"><div class="av">L</div><h3>Ljubiša</h3><p>Techniker mit Praxis in Montage und Service. Unterstützt Prüfungen und Einsätze vor Ort.</p></div>
+<div class="grid g2 team">
+<div class="card person"><img class="ph" src="marko.jpg" alt="Marko Jovicin"><div><h3>Marko Jovicin</h3><p>Dipl.-Ing. Maschinenbau. Praxis im Service von Gastechnik, unter anderem als Serviceleiter. Heute hauptberuflich Ingenieur.</p></div></div>
+<div class="card person"><img class="ph" src="ljubisa.jpg" alt="Ljubiša"><div><h3>Ljubiša</h3><p>Techniker mit Praxis in Montage und Service. Unterstützt Prüfungen und Einsätze vor Ort.</p></div></div>
 <div class="card stat"><b>Schritt für Schritt</b><p>Start im Nebenerwerb, Wachstum mit jedem zufriedenen Kunden.</p></div>
 <div class="card stat"><b>Sauber geregelt</b><p>Handwerkskammer, Sachkunde und Schulungen von Anfang an.</p></div>
 </div>
