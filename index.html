@@ -1,208 +1,176 @@
 <!doctype html><html lang="de"><head><meta charset="utf-8">
-<style>
-@page{size:1080px 1920px;margin:0}
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#0b2447;--navy2:#123a6b;--deep:#06162d;--cyan:#35d0e0;--mint:#7ff0d8;--ink:#e9f2fb;--mute:#9db4cf}
-body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--deep)}
-.s{width:1080px;height:1920px;position:relative;overflow:hidden;page-break-after:always;padding:120px 96px;
- background:radial-gradient(1200px 900px at 85% 8%,rgba(53,208,224,.22),transparent 60%),radial-gradient(900px 900px at 0% 100%,rgba(18,58,107,.9),transparent 70%),linear-gradient(170deg,#0d2a52 0%,#071a35 55%,#04101f 100%)}
-.s:last-child{page-break-after:auto}
-.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(180deg,#000,transparent 80%)}
-.waves{position:absolute;left:-40px;right:-40px;bottom:0;height:520px;opacity:.55}
-.top{position:relative;display:flex;justify-content:space-between;align-items:center;font-size:24px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
-.top img{height:64px}
-.num{font-weight:700;color:var(--cyan)}
-.kicker{font-size:28px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);font-weight:600;margin-bottom:28px}
-h1{font-size:112px;line-height:1.0;font-weight:800;letter-spacing:-.035em}
-h2{font-size:84px;line-height:1.04;font-weight:800;letter-spacing:-.03em}
-.grad{background:linear-gradient(90deg,#fff 0%,var(--cyan) 60%,var(--mint) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-p.lead{font-size:38px;line-height:1.45;color:#c9d9ec;font-weight:400}
-.body{position:relative;margin-top:110px}
-.card{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:32px;padding:40px 44px;margin-bottom:26px;display:flex;gap:34px;align-items:flex-start}
-.card .ix{font-size:30px;font-weight:700;color:var(--cyan);min-width:58px;padding-top:6px;font-variant-numeric:tabular-nums}
-.card h3{font-size:42px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
-.card p{font-size:30px;line-height:1.42;color:#b5c8de}
-.pill{display:inline-block;border:1px solid rgba(53,208,224,.5);color:var(--cyan);border-radius:999px;padding:10px 24px;font-size:24px;font-weight:600;letter-spacing:.06em;margin:0 10px 12px 0}
-.foot{position:absolute;left:96px;right:96px;bottom:90px;display:flex;justify-content:space-between;font-size:24px;color:var(--mute);letter-spacing:.06em}
-/* cover */
-.cover .logo{width:860px;margin-top:300px;position:relative}
-.cover .tag{position:relative;margin-top:110px}
-.gauge{position:absolute;right:-260px;top:-240px;width:900px;height:900px;opacity:.16}
-/* stats */
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:60px}
-.stat{border-radius:28px;padding:38px;background:rgba(53,208,224,.08);border:1px solid rgba(53,208,224,.25)}
-.stat b{display:block;font-size:64px;font-weight:800;color:#fff;letter-spacing:-.02em}
-.stat span{font-size:27px;color:#b5c8de;line-height:1.35;display:block;margin-top:8px}
-/* timeline */
-.tl{position:relative;margin-top:30px;padding-left:70px}
-.tl:before{content:"";position:absolute;left:18px;top:20px;bottom:30px;width:4px;background:linear-gradient(var(--cyan),rgba(53,208,224,.1));border-radius:4px}
-.step{position:relative;margin-bottom:60px}
-.step:before{content:"";position:absolute;left:-66px;top:10px;width:32px;height:32px;border-radius:50%;background:var(--deep);border:5px solid var(--cyan);box-shadow:0 0 30px rgba(53,208,224,.6)}
-.step .ph{font-size:26px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:700}
-.step h3{font-size:46px;font-weight:800;margin:8px 0 12px}
-.step p{font-size:30px;line-height:1.45;color:#b5c8de}
-/* questions */
-.q{margin-bottom:44px}
-.q .qh{display:flex;gap:26px;font-size:36px;line-height:1.35;font-weight:600}
-.q .qh i{font-style:normal;color:var(--cyan);font-weight:800;min-width:56px}
-.line{height:62px;border-bottom:2px dashed rgba(157,180,207,.35);margin-left:82px}
-.quote{font-size:58px;line-height:1.2;font-weight:700;letter-spacing:-.02em}
-.who{display:flex;gap:30px;align-items:center;margin-top:30px}
-.av{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--navy2));display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:#04101f;flex:none}
-.field{border-bottom:2px solid rgba(157,180,207,.45);height:96px;display:flex;align-items:flex-end;padding-bottom:12px;font-size:26px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
-</style><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TechHafen FluidLab</title><meta name="description" content="Prüflabor für Druckgeräte · in Gründung · Rhein-Main">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TechHafen FluidLab</title>
+<meta name="description" content="Prüflabor für Druckgeräte · TechHafen GmbH i.G. · Bad Homburg v. d. Höhe">
 <link rel="icon" href="icon_white.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-html{scroll-snap-type:y mandatory;background:#04101f}
-body{display:flex;flex-direction:column;align-items:center}
-.s{zoom:var(--z,0.35);scroll-snap-align:center;flex:none;page-break-after:auto}
-.s:not(:first-of-type){margin-top:calc(24px / var(--z,0.35))}
-.dl{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:28px 16px 40px;scroll-snap-align:end}
-.dl a{font:600 15px Inter,sans-serif;color:#04101f;background:#35d0e0;padding:12px 18px;border-radius:999px;text-decoration:none}
-.dl a.o{background:transparent;color:#35d0e0;border:1px solid #35d0e0}
-</style>
-<script>function fit(){var z=Math.min(innerWidth/1080,innerHeight/1920);document.documentElement.style.setProperty('--z',z)}fit();addEventListener('resize',fit)</script>
-</head><body>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--deep:#06162d;--navy2:#123a6b;--cyan:#35d0e0;--mint:#7ff0d8;--ink:#e9f2fb;--mute:#9db4cf;--soft:#b5c8de;--line:rgba(255,255,255,.12)}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);line-height:1.5;
+ background:radial-gradient(1200px 800px at 90% -10%,rgba(53,208,224,.18),transparent 60%),radial-gradient(1000px 900px at -10% 60%,rgba(18,58,107,.7),transparent 70%),linear-gradient(175deg,#0d2a52 0%,#071a35 45%,#04101f 100%);background-color:var(--deep)}
+a{color:inherit}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.grad{background:linear-gradient(90deg,#fff 0%,var(--cyan) 60%,var(--mint) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(44px,7vw,92px);line-height:1;font-weight:800;letter-spacing:-.035em}
+h2{font-size:clamp(32px,4.4vw,56px);line-height:1.06;font-weight:800;letter-spacing:-.03em}
+h3{font-size:clamp(19px,1.6vw,22px);font-weight:700;margin-bottom:6px}
+.lead{font-size:clamp(17px,1.5vw,20px);color:#c9d9ec;max-width:640px}
+section{padding:clamp(56px,9vw,110px) 0;border-top:1px solid rgba(255,255,255,.06)}
+/* nav */
+nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(12px);background:rgba(6,22,45,.7);border-bottom:1px solid rgba(255,255,255,.06)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+nav img{height:34px}
+nav .links{display:flex;gap:26px;font-size:14px;color:var(--soft)}
+nav .links a{text-decoration:none}
+nav .links a:hover{color:#fff}
+.btn{display:inline-block;font-weight:600;font-size:15px;color:#04101f;background:var(--cyan);padding:12px 20px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.btn.o{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+/* hero */
+.hero{border:0;padding-top:clamp(40px,7vw,90px);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .logo{width:min(440px,90%);margin-bottom:36px}
+.hero .lead{margin:28px 0 32px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.gauge{width:100%;max-width:460px;justify-self:end;opacity:.9}
+.meta{margin-top:40px;font-size:14px;color:var(--mute);letter-spacing:.04em}
+/* cards */
+.grid{display:grid;gap:18px;margin-top:44px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:20px;padding:26px}
+.card p{color:var(--soft);font-size:15.5px}
+.card .ix{font-size:14px;font-weight:800;color:var(--cyan);margin-bottom:14px;letter-spacing:.08em}
+.stat b{display:block;font-size:26px;font-weight:800;margin-bottom:4px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{border:1px solid rgba(53,208,224,.5);color:var(--cyan);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+.note{color:var(--mute);font-size:14px;margin-top:16px}
+.av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--navy2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:#04101f;margin-bottom:16px}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;position:relative}
+.tl .card{position:relative;padding-top:42px}
+.tl .card:before{content:"";position:absolute;top:22px;left:26px;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px rgba(53,208,224,.8)}
+.tl .ph{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:8px}
+/* questions */
+.qs{counter-reset:q;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px;margin-top:44px}
+.q{display:flex;gap:16px;padding:20px 22px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-weight:600;font-size:16.5px}
+.q i{font-style:normal;color:var(--cyan);font-weight:800;min-width:28px}
+/* contact */
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.contact .card{padding:34px}
+.contact .big{font-size:clamp(18px,1.8vw,22px);line-height:1.9}
+.contact .big a{text-decoration:none}
+.contact .big a:hover{color:var(--cyan)}
+footer{padding:34px 0 46px;color:var(--mute);font-size:13px;border-top:1px solid rgba(255,255,255,.06)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+/* responsive */
+@media (max-width:980px){
+ .g4{grid-template-columns:repeat(2,1fr)}.g3,.tl{grid-template-columns:1fr 1fr}
+ .split,.contact{grid-template-columns:1fr;gap:28px}
+ nav .links{display:none}
+}
+@media (max-width:760px){
+ .hero .wrap{grid-template-columns:1fr}
+ .gauge{display:none}
+ .qs{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+ .g2,.g3,.tl{grid-template-columns:1fr}
+ .g4{grid-template-columns:1fr 1fr;gap:12px}.g4 .card{padding:18px}.stat b{font-size:20px}
+ nav .btn{padding:9px 14px;font-size:13px}
+}
+</style></head><body>
 
-<svg width="0" height="0" style="position:absolute"><defs>
-<linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#35d0e0" stop-opacity=".0"/><stop offset=".5" stop-color="#35d0e0" stop-opacity=".9"/><stop offset="1" stop-color="#7ff0d8" stop-opacity=".2"/></linearGradient>
-<symbol id="waves" viewBox="0 0 1160 520" preserveAspectRatio="none">
-<g fill="none" stroke="url(#wg)" stroke-width="2">
-<path d="M0 300 C200 200 400 420 620 300 S1000 180 1160 260"/><path d="M0 330 C200 230 400 450 620 330 S1000 210 1160 290" opacity=".8"/><path d="M0 360 C200 260 400 480 620 360 S1000 240 1160 320" opacity=".6"/><path d="M0 390 C200 290 400 510 620 390 S1000 270 1160 350" opacity=".45"/><path d="M0 420 C200 320 400 540 620 420 S1000 300 1160 380" opacity=".3"/><path d="M0 450 C200 350 400 570 620 450 S1000 330 1160 410" opacity=".2"/>
-</g></symbol>
-<symbol id="gauge" viewBox="0 0 400 400"><g fill="none" stroke="#35d0e0">
-<circle cx="200" cy="200" r="190" stroke-width="3"/><circle cx="200" cy="200" r="160" stroke-width="1" stroke-dasharray="2 10"/>
-<path d="M70 290 A150 150 0 1 1 330 290" stroke-width="10" stroke-linecap="round"/>
-<line x1="200" y1="200" x2="300" y2="110" stroke-width="10" stroke-linecap="round"/><circle cx="200" cy="200" r="16" fill="#35d0e0"/></g></symbol>
-</defs></svg>
+<nav><div class="wrap"><a href="#top"><img src="logo_white.png" alt="TechHafen FluidLab"></a>
+<div class="links"><a href="#idee">Idee</a><a href="#leistungen">Leistungen</a><a href="#medizingase">Medizingase</a><a href="#team">Team</a><a href="#fragen">Fragen</a></div>
+<a class="btn" href="#kontakt">Kontakt</a></div></nav>
 
-<!-- 1 COVER -->
-<section class="s cover"><div class="grid"></div>
-<svg class="gauge"><use href="#gauge"/></svg>
-<div class="top"><span>TechHafen GmbH i.G.*</span><span class="num">In Gründung</span></div>
-<img class="logo" src="logo_white.png">
-<div class="tag">
-<div class="kicker">Prüflabor für Druckgeräte</div>
+<header class="hero" id="top"><div class="wrap">
+<div>
+<div class="kicker">TechHafen GmbH i.G.* · Prüflabor für Druckgeräte</div>
 <h1>Prüfen.<br>Warten.<br><span class="grad">Sicher unter Druck.</span></h1>
-<p class="lead" style="margin-top:50px;max-width:820px">Ein kleines, präzises Prüf- und Servicelabor für Armaturen, Ventile und Druckmessgeräte, mit Schwerpunkt Gase.</p>
+<p class="lead">Ein kleines, präzises Prüf- und Servicelabor für Armaturen, Ventile und Druckmessgeräte, mit Schwerpunkt Gase. Regional im Rhein-Main-Gebiet.</p>
+<div class="cta"><a class="btn" href="TechHafen_FluidLab_Praesentation.pdf">Präsentation (PDF)</a><a class="btn o" href="TechHafen_FluidLab_Fragebogen_A4.pdf">Fragebogen A4 (PDF)</a></div>
+<p class="meta">Bad Homburg v. d. Höhe · Marko Jovicin, Dipl.-Ing. Maschinenbau</p>
 </div>
-<svg class="waves"><use href="#waves"/></svg>
-<div class="foot" style="bottom:110px"><span>Bad Homburg v. d. Höhe</span><span>Marko Jovicin · Dipl.-Ing. Maschinenbau</span></div><div style="position:absolute;left:96px;right:96px;bottom:40px;font-size:20px;color:#7f97b3;letter-spacing:.04em">* Gesellschaft in Gründung, noch nicht im Handelsregister eingetragen.</div>
-</section>
+<svg class="gauge" viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#35d0e0"/><stop offset="1" stop-color="#7ff0d8"/></linearGradient></defs>
+<g fill="none" stroke="#35d0e0"><circle cx="200" cy="200" r="190" stroke-width="2" opacity=".35"/><circle cx="200" cy="200" r="160" stroke-width="1" stroke-dasharray="2 10" opacity=".6"/>
+<path d="M70 290 A150 150 0 1 1 330 290" stroke="url(#gg)" stroke-width="10" stroke-linecap="round"/>
+<line x1="200" y1="200" x2="300" y2="110" stroke-width="10" stroke-linecap="round"/><circle cx="200" cy="200" r="16" fill="#35d0e0"/></g></svg>
+</div></header>
 
-<!-- 2 IDEE -->
-<section class="s"><div class="grid"></div>
-<div class="top"><img src="icon_white.png"><span><span class="num">01</span> / Die Idee</span></div>
-<div class="body">
-<div class="kicker">Warum TechHafen FluidLab?</div>
-<h2>Ein <span class="grad">sicherer Hafen</span> für alles, was unter Druck steht.</h2>
-<p class="lead" style="margin-top:50px">Viele Betreiber warten Wochen auf Prüfungen von Sicherheitsventilen, Druckminderern und Manometern. Große Prüfdienstleister sitzen oft weit weg.</p>
-<p class="lead" style="margin-top:30px;color:#fff;font-weight:600">Mein Ansatz: regional, schnell, sauber dokumentiert.</p>
-<div class="stats">
-<div class="stat"><b>Regional</b><span>Rhein-Main, kurze Wege, Abholung &amp; Bringdienst</span></div>
-<div class="stat"><b>Präzise</b><span>Kalibrierte Referenzen, nachvollziehbare Protokolle</span></div>
-<div class="stat"><b>Schnell</b><span>Kurze Durchlaufzeiten statt langer Wartelisten</span></div>
-<div class="stat"><b>Persönlich</b><span>Ein Ansprechpartner vom Anruf bis zum Prüfbericht</span></div>
-</div></div>
-<svg class="waves" style="height:300px;opacity:.35"><use href="#waves"/></svg>
-</section>
-
-<!-- 3 LEISTUNGEN -->
-<section class="s"><div class="grid"></div>
-<div class="top"><img src="icon_white.png"><span><span class="num">02</span> / Leistungen</span></div>
-<div class="body" style="margin-top:80px">
-<div class="kicker">Geplantes Portfolio</div>
-<h2 style="margin-bottom:56px">Fünf Bereiche.<br><span class="grad">Ein Prüfstand.</span></h2>
-<div class="card"><div class="ix">01</div><div><h3>Sicherheitsventile</h3><p>Prüfung von Ansprechdruck und Dichtheit am Prüfstand, mit Prüfprotokoll.</p></div></div>
-<div class="card"><div class="ix">02</div><div><h3>Druckminderer &amp; Regler</h3><p>Funktions- und Dichtheitsprüfung, Wartung, Austausch von Verschleißteilen.</p></div></div>
-<div class="card"><div class="ix">03</div><div><h3>Manometer &amp; Druckmessgeräte</h3><p>Vergleichsmessung gegen kalibrierte Referenz, Dokumentation.</p></div></div>
-<div class="card"><div class="ix">04</div><div><h3>GMP-Membranventile</h3><p>Membranwechsel für Pharma und Biotech, dokumentiert nach Kundenvorgabe.</p></div></div>
-<div class="card"><div class="ix">05</div><div><h3>Flüssiggas in Freizeitfahrzeugen</h3><p>Gasprüfung nach DVGW G 607 für Wohnmobile und Caravans.</p></div></div>
-</div></section>
-
-<!-- 4 MEDIZINGASE -->
-<section class="s"><div class="grid"></div>
-<svg class="gauge" style="opacity:.1;right:-380px;top:520px"><use href="#gauge"/></svg>
-<div class="top"><img src="icon_white.png"><span><span class="num">03</span> / Fokus Medizingase</span></div>
-<div class="body">
-<div class="kicker">Heute bei Baldus</div>
-<h2>Wo Prüfung über <span class="grad">Patientensicherheit</span> entscheidet.</h2>
-<p class="lead" style="margin-top:44px">Medizingase stellen die höchsten Anforderungen an Dichtheit, Reinheit und Dokumentation. Genau dort möchte ich lernen und mich spezialisieren.</p>
-<div style="margin-top:56px">
-<span class="pill">O₂</span><span class="pill">N₂O</span><span class="pill">Druckluft med.</span><span class="pill">CO₂</span><span class="pill">Vakuum</span><span class="pill">ISO 7396-1</span><span class="pill">ISO 10524</span>
+<section id="idee"><div class="wrap">
+<div class="split">
+<div><div class="kicker">Die Idee</div><h2>Ein <span class="grad">sicherer Hafen</span> für alles, was unter Druck steht.</h2></div>
+<div><p class="lead">Viele Betreiber warten Wochen auf Prüfungen von Sicherheitsventilen, Druckminderern und Manometern. Große Prüfdienstleister sitzen oft weit weg.</p>
+<p class="lead" style="margin-top:16px;color:#fff;font-weight:600">Mein Ansatz: regional, schnell, sauber dokumentiert.</p></div>
 </div>
-<div class="card" style="margin-top:40px"><div class="ix">→</div><div><h3>Mögliche Ansatzpunkte</h3><p>Sicherheitsventile in Versorgungsanlagen · Druckminderer und Entnahmestellen · Manometer an Flaschenbatterien · Unterstützung bei wiederkehrenden Prüfungen</p></div></div>
-<p style="font-size:28px;color:var(--mute);margin-top:20px;line-height:1.45">Was davon realistisch ist, möchte ich von Ihnen als Experten erfahren.</p>
-</div></section>
-
-<!-- 5 TEAM -->
-<section class="s"><div class="grid"></div>
-<div class="top"><img src="icon_white.png"><span><span class="num">04</span> / Wer dahintersteht</span></div>
-<div class="body">
-<div class="kicker">Team</div>
-<h2>Ingenieur-Wissen.<br><span class="grad">Praktiker-Hände.</span></h2>
-<div class="card" style="margin-top:70px;align-items:center"><div class="av">M</div><div><h3>Marko</h3><p>Dipl.-Ing. Maschinenbau. Praxis im Service von Gastechnik, unter anderem als Serviceleiter. Heute hauptberuflich Ingenieur.</p></div></div>
-<div class="card" style="align-items:center"><div class="av">L</div><div><h3>Ljubiša</h3><p>Techniker mit Praxis in Montage und Service. Unterstützt Prüfungen und Einsätze vor Ort.</p></div></div>
-<div class="stats" style="margin-top:40px">
-<div class="stat"><b>Schritt für Schritt</b><span>Start im Nebenerwerb, Wachstum mit jedem zufriedenen Kunden</span></div>
-<div class="stat"><b>Sauber geregelt</b><span>Handwerkskammer, Sachkunde und Schulungen von Anfang an</span></div>
-</div></div>
-<svg class="waves" style="height:280px;opacity:.3"><use href="#waves"/></svg>
-</section>
-
-<!-- 6 FAHRPLAN -->
-<section class="s"><div class="grid"></div>
-<div class="top"><img src="icon_white.png"><span><span class="num">05</span> / Fahrplan</span></div>
-<div class="body">
-<div class="kicker">Der Weg</div>
-<h2 style="margin-bottom:80px">Drei Etappen<br>zum <span class="grad">Prüflabor.</span></h2>
-<div class="tl">
-<div class="step"><div class="ph">Etappe 1 · Start</div><h3>Gründung &amp; Qualifikation</h3><p>Ausnahmebewilligung nach §8 HwO für ausgewählte Teilbereiche, Sachkunde G 607, erste Kunden im Bereich Flüssiggas.</p></div>
-<div class="step"><div class="ph">Etappe 2 · Aufbau</div><h3>Prüfstand &amp; Ventilservice</h3><p>Prüfstand für Sicherheitsventile und Manometer, Befähigte Person nach TRBS 1203, Herstellerschulungen.</p></div>
-<div class="step"><div class="ph">Etappe 3 · Spezialisierung</div><h3>Medizingase &amp; Pharma</h3><p>Service für Medizingas-Armaturen und GMP-Membranventile, mit den nötigen Autorisierungen.</p></div>
+<div class="grid g4">
+<div class="card stat"><b>Regional</b><p>Rhein-Main, kurze Wege, Abholung &amp; Bringdienst</p></div>
+<div class="card stat"><b>Präzise</b><p>Kalibrierte Referenzen, nachvollziehbare Protokolle</p></div>
+<div class="card stat"><b>Schnell</b><p>Kurze Durchlaufzeiten statt langer Wartelisten</p></div>
+<div class="card stat"><b>Persönlich</b><p>Ein Ansprechpartner vom Anruf bis zum Prüfbericht</p></div>
 </div></div></section>
 
-<!-- 7 FRAGEN 1 -->
-<section class="s"><div class="grid"></div>
-<div class="top"><img src="icon_white.png"><span><span class="num">06</span> / Ihre Expertise</span></div>
-<div class="body" style="margin-top:80px">
-<div class="kicker">Ich frage die Profis</div>
-<h2 style="margin-bottom:64px">Was würden <span class="grad">Sie</span> mir raten?</h2>
-<div class="q"><div class="qh"><i>Q1</i>Welche Prüfungen an Medizingasanlagen werden heute am häufigsten an externe Partner vergeben?</div><div class="line"></div><div class="line"></div></div>
-<div class="q"><div class="qh"><i>Q2</i>Welche Qualifikationen und Nachweise erwarten Kliniken von einem Prüfpartner?</div><div class="line"></div><div class="line"></div></div>
-<div class="q"><div class="qh"><i>Q3</i>Wo gibt es heute die größten Engpässe: Wartezeiten, Ersatzteile oder Dokumentation?</div><div class="line"></div><div class="line"></div></div>
-<div class="q"><div class="qh"><i>Q4</i>Welche Herstellerschulungen sind für Service an Medizingas-Armaturen unverzichtbar?</div><div class="line"></div><div class="line"></div></div>
-</div></section>
+<section id="leistungen"><div class="wrap">
+<div class="kicker">Geplantes Portfolio</div><h2>Fünf Bereiche. <span class="grad">Ein Prüfstand.</span></h2>
+<div class="grid g3">
+<div class="card"><div class="ix">01</div><h3>Sicherheitsventile</h3><p>Prüfung von Ansprechdruck und Dichtheit am Prüfstand, mit Prüfprotokoll.</p></div>
+<div class="card"><div class="ix">02</div><h3>Druckminderer &amp; Regler</h3><p>Funktions- und Dichtheitsprüfung, Wartung, Austausch von Verschleißteilen.</p></div>
+<div class="card"><div class="ix">03</div><h3>Manometer &amp; Druckmessgeräte</h3><p>Vergleichsmessung gegen kalibrierte Referenz, Dokumentation.</p></div>
+<div class="card"><div class="ix">04</div><h3>GMP-Membranventile</h3><p>Membranwechsel für Pharma und Biotech, dokumentiert nach Kundenvorgabe.</p></div>
+<div class="card"><div class="ix">05</div><h3>Flüssiggas in Freizeitfahrzeugen</h3><p>Gasprüfung nach DVGW G 607 für Wohnmobile und Caravans.</p></div>
+<div class="card" style="background:rgba(53,208,224,.08);border-color:rgba(53,208,224,.3)"><div class="ix">+</div><h3>Ihr Bedarf?</h3><p>Sie haben eine Prüfaufgabe, die hier fehlt? Sprechen Sie mich an.</p></div>
+</div></div></section>
 
-<!-- 8 FRAGEN 2 -->
-<section class="s"><div class="grid"></div>
-<div class="top"><img src="icon_white.png"><span><span class="num">07</span> / Ihre Expertise</span></div>
-<div class="body" style="margin-top:80px">
-<div class="kicker">Markt &amp; Praxis</div>
-<h2 style="margin-bottom:64px">Und ganz <span class="grad">ehrlich…</span></h2>
-<div class="q"><div class="qh"><i>Q5</i>Gibt es im Rhein-Main-Gebiet Bedarf an einem regionalen Prüfstand für Sicherheitsventile und Manometer?</div><div class="line"></div><div class="line"></div></div>
-<div class="q"><div class="qh"><i>Q6</i>Welches Abrechnungsmodell ist üblich: pro Prüfling, pauschal oder Wartungsvertrag?</div><div class="line"></div><div class="line"></div></div>
-<div class="q"><div class="qh"><i>Q7</i>Welchen Fehler sollte ein Neugründer in diesem Bereich unbedingt vermeiden?</div><div class="line"></div><div class="line"></div></div>
-<div class="q"><div class="qh"><i>Q8</i>Mit wem sollte ich unbedingt als Nächstes sprechen?</div><div class="line"></div><div class="line"></div></div>
-</div></section>
+<section id="medizingase"><div class="wrap"><div class="split">
+<div><div class="kicker">Fokus Medizingase</div><h2>Wo Prüfung über <span class="grad">Patientensicherheit</span> entscheidet.</h2>
+<div class="pills"><span class="pill">O₂</span><span class="pill">N₂O</span><span class="pill">Druckluft med.</span><span class="pill">CO₂</span><span class="pill">Vakuum</span><span class="pill">ISO 7396-1</span><span class="pill">ISO 10524</span></div></div>
+<div><p class="lead">Medizingase stellen die höchsten Anforderungen an Dichtheit, Reinheit und Dokumentation. Genau dort möchte ich lernen und mich spezialisieren.</p>
+<div class="card" style="margin-top:24px"><h3>Mögliche Ansatzpunkte</h3><p>Sicherheitsventile in Versorgungsanlagen · Druckminderer und Entnahmestellen · Manometer an Flaschenbatterien · Unterstützung bei wiederkehrenden Prüfungen</p></div>
+<p class="note">Was davon realistisch ist, möchte ich von Ihnen als Experten erfahren.</p></div>
+</div></div></section>
 
-<!-- 9 KONTAKT -->
-<section class="s cover"><div class="grid"></div>
-<svg class="gauge"><use href="#gauge"/></svg>
-<div class="top"><span>Danke</span><span class="num">08 / Kontakt</span></div>
-<div class="body" style="margin-top:220px">
-<p class="quote">„Jede gute Prüfstelle beginnt mit den richtigen <span class="grad">Fragen</span>.“</p>
-<p class="lead" style="margin-top:50px">Darf ich Sie nach dem Seminar kontaktieren? Ich freue mich über jeden Hinweis und jede Erfahrung.</p>
-<div class="card" style="margin-top:60px;display:block;padding:44px 48px">
-<div style="font-size:26px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:18px">TechHafen GmbH i.G.*</div>
-<h3 style="font-size:46px;margin-bottom:22px">Marko Jovicin <span style="font-weight:400;color:#b5c8de;font-size:32px">· Dipl.-Ing. Maschinenbau</span></h3>
-<p style="font-size:36px;line-height:1.6;color:#fff"><a href="tel:+4915122207744" style="color:#fff;text-decoration:none">☎&nbsp; +49 151 222 077 44</a><br><a href="mailto:marko.jovicin@icloud.com" style="color:#fff;text-decoration:none">✉&nbsp; marko.jovicin@icloud.com</a></p>
-<p style="font-size:28px;color:var(--mute);margin-top:14px">Bad Homburg v. d. Höhe</p>
+<section id="team"><div class="wrap">
+<div class="kicker">Team</div><h2>Ingenieur-Wissen. <span class="grad">Praktiker-Hände.</span></h2>
+<div class="grid g4">
+<div class="card"><div class="av">M</div><h3>Marko Jovicin</h3><p>Dipl.-Ing. Maschinenbau. Praxis im Service von Gastechnik, unter anderem als Serviceleiter. Heute hauptberuflich Ingenieur.</p></div>
+<div class="card"><div class="av">L</div><h3>Ljubiša</h3><p>Techniker mit Praxis in Montage und Service. Unterstützt Prüfungen und Einsätze vor Ort.</p></div>
+<div class="card stat"><b>Schritt für Schritt</b><p>Start im Nebenerwerb, Wachstum mit jedem zufriedenen Kunden.</p></div>
+<div class="card stat"><b>Sauber geregelt</b><p>Handwerkskammer, Sachkunde und Schulungen von Anfang an.</p></div>
 </div>
-<img src="logo_white.png" style="width:440px;margin-top:70px;opacity:.95">
-</div>
-<svg class="waves" style="opacity:.3"><use href="#waves"/></svg><div style="position:absolute;left:96px;right:96px;bottom:40px;font-size:20px;color:#7f97b3;letter-spacing:.04em">* Gesellschaft in Gründung, noch nicht im Handelsregister eingetragen.</div>
-</section>
-<div class="dl"><a href="TechHafen_FluidLab_Praesentation.pdf">Präsentation (PDF)</a><a class="o" href="TechHafen_FluidLab_Fragebogen_A4.pdf">Fragebogen A4 (PDF)</a></div></body></html>
+<div style="margin-top:72px"><div class="kicker">Fahrplan</div><h2>Drei Etappen zum <span class="grad">Prüflabor.</span></h2></div>
+<div class="tl">
+<div class="card"><div class="ph">Etappe 1 · Start</div><h3>Gründung &amp; Qualifikation</h3><p>Ausnahmebewilligung nach §8 HwO für ausgewählte Teilbereiche, Sachkunde G 607, erste Kunden im Bereich Flüssiggas.</p></div>
+<div class="card"><div class="ph">Etappe 2 · Aufbau</div><h3>Prüfstand &amp; Ventilservice</h3><p>Prüfstand für Sicherheitsventile und Manometer, Befähigte Person nach TRBS 1203, Herstellerschulungen.</p></div>
+<div class="card"><div class="ph">Etappe 3 · Spezialisierung</div><h3>Medizingase &amp; Pharma</h3><p>Service für Medizingas-Armaturen und GMP-Membranventile, mit den nötigen Autorisierungen.</p></div>
+</div></div></section>
+
+<section id="fragen"><div class="wrap">
+<div class="split"><div><div class="kicker">Ihre Expertise</div><h2>Was würden <span class="grad">Sie</span> mir raten?</h2></div>
+<div><p class="lead">Acht Fragen an Fachleute aus der Praxis. Gern auch auf dem <a href="TechHafen_FluidLab_Fragebogen_A4.pdf" style="color:var(--cyan)">Fragebogen zum Ausdrucken</a>.</p></div></div>
+<div class="qs">
+<div class="q"><i>01</i>Welche Prüfungen an Medizingasanlagen werden heute am häufigsten an externe Partner vergeben?</div>
+<div class="q"><i>02</i>Welche Qualifikationen und Nachweise erwarten Kliniken von einem Prüfpartner?</div>
+<div class="q"><i>03</i>Wo gibt es heute die größten Engpässe: Wartezeiten, Ersatzteile oder Dokumentation?</div>
+<div class="q"><i>04</i>Welche Herstellerschulungen sind für Service an Medizingas-Armaturen unverzichtbar?</div>
+<div class="q"><i>05</i>Gibt es im Rhein-Main-Gebiet Bedarf an einem regionalen Prüfstand für Sicherheitsventile und Manometer?</div>
+<div class="q"><i>06</i>Welches Abrechnungsmodell ist üblich: pro Prüfling, pauschal oder Wartungsvertrag?</div>
+<div class="q"><i>07</i>Welchen Fehler sollte ein Neugründer in diesem Bereich unbedingt vermeiden?</div>
+<div class="q"><i>08</i>Mit wem sollte ich unbedingt als Nächstes sprechen?</div>
+</div></div></section>
+
+<section id="kontakt"><div class="wrap contact">
+<div><div class="kicker">Kontakt</div><h2>„Jede gute Prüfstelle beginnt mit den richtigen <span class="grad">Fragen</span>.“</h2>
+<p class="lead" style="margin-top:22px">Ich freue mich über jeden Hinweis und jede Erfahrung.</p></div>
+<div class="card">
+<div class="kicker">TechHafen GmbH i.G.*</div>
+<h3 style="font-size:24px">Marko Jovicin</h3><p>Dipl.-Ing. Maschinenbau</p>
+<p class="big" style="margin-top:14px"><a href="tel:+4915122207744">☎&nbsp; +49 151 222 077 44</a><br><a href="mailto:marko.jovicin@icloud.com">✉&nbsp; marko.jovicin@icloud.com</a></p>
+<p style="color:var(--mute);margin-top:6px">Bad Homburg v. d. Höhe</p>
+</div></div></section>
+
+<footer><div class="wrap"><span>* Gesellschaft in Gründung, noch nicht im Handelsregister eingetragen.</span><span>© 2026 TechHafen FluidLab</span></div></footer>
+</body></html>
