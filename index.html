@@ -84,6 +84,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .card img.ph{width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:50% 20%;border-radius:14px;margin-bottom:16px;display:block}
 .person{display:flex;gap:22px;align-items:center}.person img.ph{width:170px;flex:none;margin:0}
 @media (max-width:560px){.team{grid-template-columns:1fr}.person{flex-direction:column;align-items:stretch;gap:16px}.person img.ph{width:100%;aspect-ratio:1/1}}
+.banners{display:grid;gap:18px;margin-top:44px}
+.banner{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:2.7/1;background:#0d2348}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner .bt{position:absolute;left:0;top:0;bottom:0;width:38%;padding:clamp(20px,3vw,44px);display:flex;flex-direction:column;justify-content:center}
+.banner h3{font-size:clamp(24px,2.6vw,36px);font-weight:800;letter-spacing:-.02em}
+.banner p{color:var(--soft);font-size:clamp(14px,1.2vw,16.5px);margin-top:8px}
+@media (max-width:760px){.banner{aspect-ratio:auto}.banner img{position:static;height:240px;object-position:62% 30%}.banner .bt{position:static;width:auto;padding:22px}}
 </style></head><body>
 
 <nav><div class="wrap"><a href="#top"><img src="logo_white.png" alt="TechHafen FluidLab"></a>
@@ -145,9 +152,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 
 <section id="team"><div class="wrap">
 <div class="kicker">Team</div><h2>Ingenieur-Wissen. <span class="grad">Praktiker-Hände.</span></h2>
-<div class="grid g2 team">
-<div class="card person"><img class="ph" src="marko.jpg" alt="Marko Jovicin"><div><h3>Marko Jovicin</h3><p>Dipl.-Ing. Maschinenbau. Praxis im Service von Gastechnik, unter anderem als Serviceleiter. Heute hauptberuflich Ingenieur.</p></div></div>
-<div class="card person"><img class="ph" src="ljubisa.jpg" alt="Ljubiša"><div><h3>Ljubiša</h3><p>Techniker mit Praxis in Montage und Service. Unterstützt Prüfungen und Einsätze vor Ort.</p></div></div>
+<div class="banners">
+<div class="banner"><img src="marko_wide.jpg" alt="Marko Jovicin"><div class="bt"><div class="kicker">Gründer · Ingenieur</div><h3>Marko Jovicin</h3><p>Dipl.-Ing. Maschinenbau. Praxis im Service von Gastechnik, unter anderem als Serviceleiter. Heute hauptberuflich Ingenieur.</p></div></div>
+<div class="banner"><img src="ljubisa_wide.jpg" alt="Ljubiša"><div class="bt"><div class="kicker">Techniker</div><h3>Ljubiša</h3><p>Techniker mit Praxis in Montage und Service. Unterstützt Prüfungen und Einsätze vor Ort.</p></div></div>
+</div>
+<div class="grid g2">
 <div class="card stat"><b>Schritt für Schritt</b><p>Start im Nebenerwerb, Wachstum mit jedem zufriedenen Kunden.</p></div>
 <div class="card stat"><b>Sauber geregelt</b><p>Handwerkskammer, Sachkunde und Schulungen von Anfang an.</p></div>
 </div>
