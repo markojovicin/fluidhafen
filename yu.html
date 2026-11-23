@@ -1,0 +1,196 @@
+<!doctype html><html lang="sr-Latn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TechHafen FluidLab</title>
+<meta name="description" content="Laboratorija za ispitivanje opreme pod pritiskom · TechHafen GmbH i.G. · Bad Homburg, Nemačka">
+<link rel="icon" href="icon_white.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--deep:#06162d;--navy2:#123a6b;--cyan:#35d0e0;--mint:#7ff0d8;--ink:#e9f2fb;--mute:#9db4cf;--soft:#b5c8de;--line:rgba(255,255,255,.12)}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);line-height:1.5;
+ background:radial-gradient(1200px 800px at 90% -10%,rgba(53,208,224,.18),transparent 60%),radial-gradient(1000px 900px at -10% 60%,rgba(18,58,107,.7),transparent 70%),linear-gradient(175deg,#0d2a52 0%,#071a35 45%,#04101f 100%);background-color:var(--deep)}
+a{color:inherit}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.grad{background:linear-gradient(90deg,#fff 0%,var(--cyan) 60%,var(--mint) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(44px,7vw,92px);line-height:1;font-weight:800;letter-spacing:-.035em}
+h2{font-size:clamp(32px,4.4vw,56px);line-height:1.06;font-weight:800;letter-spacing:-.03em}
+h3{font-size:clamp(19px,1.6vw,22px);font-weight:700;margin-bottom:6px}
+.lead{font-size:clamp(17px,1.5vw,20px);color:#c9d9ec;max-width:640px}
+section{padding:clamp(56px,9vw,110px) 0;border-top:1px solid rgba(255,255,255,.06)}
+/* nav */
+nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(12px);background:rgba(6,22,45,.7);border-bottom:1px solid rgba(255,255,255,.06)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+nav img{height:34px}
+nav .links{display:flex;gap:26px;font-size:14px;color:var(--soft)}
+nav .links a{text-decoration:none}
+nav .links a:hover{color:#fff}
+.btn{display:inline-block;font-weight:600;font-size:15px;color:#04101f;background:var(--cyan);padding:12px 20px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.btn.o{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+/* hero */
+.hero{border:0;padding-top:clamp(40px,7vw,90px);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .logo{width:min(440px,90%);margin-bottom:36px}
+.hero .lead{margin:28px 0 32px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.gauge{width:100%;max-width:460px;justify-self:end;opacity:.9}
+.meta{margin-top:40px;font-size:14px;color:var(--mute);letter-spacing:.04em}
+/* cards */
+.grid{display:grid;gap:18px;margin-top:44px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:20px;padding:26px}
+.card p{color:var(--soft);font-size:15.5px}
+.card .ix{font-size:14px;font-weight:800;color:var(--cyan);margin-bottom:14px;letter-spacing:.08em}
+.stat b{display:block;font-size:26px;font-weight:800;margin-bottom:4px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{border:1px solid rgba(53,208,224,.5);color:var(--cyan);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+.note{color:var(--mute);font-size:14px;margin-top:16px}
+.av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--navy2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:#04101f;margin-bottom:16px}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;position:relative}
+.tl .card{position:relative;padding-top:42px}
+.tl .card:before{content:"";position:absolute;top:22px;left:26px;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px rgba(53,208,224,.8)}
+.tl .ph{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:8px}
+/* questions */
+.qs{counter-reset:q;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px;margin-top:44px}
+.q{display:flex;gap:16px;padding:20px 22px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-weight:600;font-size:16.5px}
+.q i{font-style:normal;color:var(--cyan);font-weight:800;min-width:28px}
+/* contact */
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.contact .card{padding:34px}
+.contact .big{font-size:clamp(18px,1.8vw,22px);line-height:1.9}
+.contact .big a{text-decoration:none}
+.contact .big a:hover{color:var(--cyan)}
+footer{padding:34px 0 46px;color:var(--mute);font-size:13px;border-top:1px solid rgba(255,255,255,.06)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+/* responsive */
+@media (max-width:980px){
+ .g4{grid-template-columns:repeat(2,1fr)}.g3,.tl{grid-template-columns:1fr 1fr}
+ .split,.contact{grid-template-columns:1fr;gap:28px}
+ nav .links{display:none}
+}
+@media (max-width:760px){
+ .hero .wrap{grid-template-columns:1fr}
+ .gauge{display:none}
+ .qs{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+ .g2,.g3,.tl{grid-template-columns:1fr}
+ .g4{grid-template-columns:1fr 1fr;gap:12px}.g4 .card{padding:18px}.stat b{font-size:20px}
+ nav .btn{padding:9px 14px;font-size:13px}
+}
+.card img.ph{width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:50% 20%;border-radius:14px;margin-bottom:16px;display:block}
+.person{display:flex;gap:22px;align-items:center}.person img.ph{width:170px;flex:none;margin:0}
+@media (max-width:560px){.team{grid-template-columns:1fr}.person{flex-direction:column;align-items:stretch;gap:16px}.person img.ph{width:100%;aspect-ratio:1/1}}
+.banners{display:grid;gap:18px;margin-top:44px}
+.banner{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:2.7/1;background:#0d2348}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner .bt{position:absolute;left:0;top:0;bottom:0;width:38%;padding:clamp(20px,3vw,44px);display:flex;flex-direction:column;justify-content:center}
+.banner h3{font-size:clamp(24px,2.6vw,36px);font-weight:800;letter-spacing:-.02em}
+.banner p{color:var(--soft);font-size:clamp(14px,1.2vw,16.5px);margin-top:8px}
+@media (max-width:760px){.banner{aspect-ratio:auto}.banner img{position:static;height:240px;object-position:62% 30%}.banner .bt{position:static;width:auto;padding:22px}}
+.lang{display:flex;gap:4px;font-size:13px;font-weight:700;margin-left:auto;margin-right:12px}.lang a{padding:6px 9px;border-radius:8px;color:var(--mute);text-decoration:none}.lang a.on{color:#04101f;background:var(--cyan)}.lang a:not(.on):hover{color:#fff}
+</style></head><body>
+
+<nav><div class="wrap"><a href="#top"><img src="logo_white.png" alt="TechHafen FluidLab"></a>
+<div class="links"><a href="#idee">Ideja</a><a href="#leistungen">Usluge</a><a href="#engineering">Inženjering</a><a href="#medizingase">Medicinski gasovi</a><a href="#team">Tim</a><a href="#fragen">Pitanja</a></div>
+<div class="lang"><a href="index.html" title="Deutsch">DE</a><a href="en.html" title="English">EN</a><a href="yu.html" class="on" title="Jugoslovenski">YU</a></div><a class="btn" href="#kontakt">Kontakt</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div>
+<div class="kicker">TechHafen GmbH i.G.* · Laboratorija za opremu pod pritiskom</div>
+<h1>Ispitati.<br>Održavati.<br><span class="grad">Sigurno pod pritiskom.</span></h1>
+<p class="lead">Mala, precizna laboratorija za ispitivanje i servis armatura, ventila i manometara, sa fokusom na gasove. Lokalno, u regionu Rajna-Majna.</p>
+<div class="cta"><a class="btn" href="TechHafen_FluidLab_Praesentation.pdf">Prezentacija (PDF, nemački)</a><a class="btn o" href="TechHafen_FluidLab_Fragebogen_A4.pdf">Upitnik A4 (PDF, nemački)</a></div>
+<p class="meta">Bad Homburg, Nemačka · Marko Jovicin, dipl. inž. mašinstva</p>
+</div>
+<svg class="gauge" viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#35d0e0"/><stop offset="1" stop-color="#7ff0d8"/></linearGradient></defs>
+<g fill="none" stroke="#35d0e0"><circle cx="200" cy="200" r="190" stroke-width="2" opacity=".35"/><circle cx="200" cy="200" r="160" stroke-width="1" stroke-dasharray="2 10" opacity=".6"/>
+<path d="M70 290 A150 150 0 1 1 330 290" stroke="url(#gg)" stroke-width="10" stroke-linecap="round"/>
+<line x1="200" y1="200" x2="300" y2="110" stroke-width="10" stroke-linecap="round"/><circle cx="200" cy="200" r="16" fill="#35d0e0"/></g></svg>
+</div></header>
+
+<section id="idee"><div class="wrap">
+<div class="split">
+<div><div class="kicker">Ideja</div><h2><span class="grad">Sigurna luka</span> za sve što je pod pritiskom.</h2></div>
+<div><p class="lead">Mnogi korisnici nedeljama čekaju ispitivanje sigurnosnih ventila, regulatora pritiska i manometara. Velike ispitne kuće su često daleko.</p>
+<p class="lead" style="margin-top:16px;color:#fff;font-weight:600">Moj pristup: lokalno, brzo, uredno dokumentovano.</p></div>
+</div>
+<div class="grid g4">
+<div class="card stat"><b>Lokalno</b><p>Rajna-Majna, kratki putevi, preuzimanje i dostava</p></div>
+<div class="card stat"><b>Precizno</b><p>Kalibrisane reference, sledljivi zapisnici</p></div>
+<div class="card stat"><b>Brzo</b><p>Kratki rokovi umesto dugih lista čekanja</p></div>
+<div class="card stat"><b>Lično</b><p>Jedna osoba za kontakt od poziva do izveštaja</p></div>
+</div></div></section>
+
+<section id="leistungen"><div class="wrap">
+<div class="kicker">Planirane usluge</div><h2>Ispitivanje i servis. <span class="grad">Na jednom mestu.</span></h2>
+<div class="grid g3">
+<div class="card"><div class="ix">01</div><h3>Sigurnosni ventili</h3><p>Ispitivanje pritiska otvaranja i zaptivenosti na probnom stolu, podešavanje, sa zapisnikom.</p></div>
+<div class="card"><div class="ix">02</div><h3>Regulatori pritiska i blokadni ventili</h3><p>Popravka, ponovno podešavanje i ispitivanje funkcije i zaptivenosti regulatora pritiska gasa i blokadnih ventila.</p></div>
+<div class="card"><div class="ix">03</div><h3>Manometri i merila pritiska</h3><p>Uporedno merenje prema kalibrisanoj referenci, dokumentacija.</p></div>
+<div class="card"><div class="ix">04</div><h3>GMP membranski ventili</h3><p>Zamena membrana za farmaciju i biotehnologiju, dokumentovano po zahtevu klijenta.</p></div>
+<div class="card"><div class="ix">05</div><h3>Tečni gas u kamp vozilima</h3><p>Ispitivanje gasne instalacije po DVGW G 607 za kampere i kamp prikolice.</p></div>
+<div class="card"><div class="ix">06</div><h3>Gasne instalacije i komprimovani vazduh</h3><p>Redovni i vanredni pregledi instalacija za tečni gas (propan-butan) i komprimovani vazduh. Instalacije prirodnog gasa u saradnji sa registrovanom stručnom firmom.<sup>1</sup></p></div>
+</div>
+<p class="note"><sup>1</sup> Usluge u pripremi. Obim zavisi od dobijenih dozvola (izuzetna dozvola po §8 HwO, upis kod operatora gasne mreže).</p>
+<div style="margin-top:64px" id="engineering"><div class="kicker">Inženjering</div><h2>Projekti koji se <span class="grad">grade</span>.</h2></div>
+<div class="grid g3">
+<div class="card"><div class="ix">E1</div><h3>Tehnološke šeme i P&amp;ID</h3><p>Tehnološke šeme i P&amp;ID dijagrami za gasna, vazdušna i procesna postrojenja.</p></div>
+<div class="card"><div class="ix">E2</div><h3>BIM modelovanje</h3><p>3D modeli postrojenja i cevovoda kao osnova za projektovanje i koordinaciju.</p></div>
+<div class="card"><div class="ix">E3</div><h3>Digitalni blizanac „As-built“</h3><p>Snimanje postojećeg stanja i BIM model stvarnog postrojenja, kao osnova za rad, održavanje i ispitivanja.</p></div>
+</div></div></section>
+
+<section id="medizingase"><div class="wrap"><div class="split">
+<div><div class="kicker">Fokus: medicinski gasovi</div><h2>Gde ispitivanje odlučuje o <span class="grad">bezbednosti pacijenata</span>.</h2>
+<div class="pills"><span class="pill">O₂</span><span class="pill">N₂O</span><span class="pill">Medicinski vazduh</span><span class="pill">CO₂</span><span class="pill">Vakuum</span><span class="pill">ISO 7396-1</span><span class="pill">ISO 10524</span></div></div>
+<div><p class="lead">Medicinski gasovi postavljaju najviše zahteve za zaptivenost, čistoću i dokumentaciju. Upravo tu želim da učim i da se specijalizujem.</p>
+<div class="card" style="margin-top:24px"><h3>Moguće polazne tačke</h3><p>Sigurnosni ventili u sistemima snabdevanja · Regulatori pritiska i izvodna mesta · Manometri na baterijama boca · Podrška pri periodičnim ispitivanjima</p></div>
+<p class="note">Od vas kao stručnjaka želim da čujem šta je od toga realno.</p></div>
+</div></div></section>
+
+<section id="team"><div class="wrap">
+<div class="kicker">Tim</div><h2>Inženjersko znanje. <span class="grad">Praktične ruke.</span></h2>
+<div class="banners">
+<div class="banner"><img src="marko_wide.jpg" alt="Marko Jovicin"><div class="bt"><div class="kicker">Osnivač · Inženjer</div><h3>Marko Jovicin</h3><p>Dipl. inž. mašinstva. Iskustvo u servisu gasne tehnike, između ostalog kao šef servisa. Danas stalno zaposlen kao inženjer.</p></div></div>
+<div class="banner"><img src="ljubisa_wide.jpg" alt="Ljubiša"><div class="bt"><div class="kicker">Tehničar</div><h3>Ljubiša</h3><p>Tehničar sa iskustvom u montaži i servisu. Podržava ispitivanja i radove na terenu.</p></div></div>
+</div>
+<div class="grid g2">
+<div class="card stat"><b>Korak po korak</b><p>Početak kao dopunska delatnost, rast sa svakim zadovoljnim klijentom.</p></div>
+<div class="card stat"><b>Sve po propisima</b><p>Zanatska komora, stručne potvrde i obuke od samog početka.</p></div>
+</div>
+<div style="margin-top:72px"><div class="kicker">Plan</div><h2>Tri etape do <span class="grad">laboratorije.</span></h2></div>
+<div class="tl">
+<div class="card"><div class="ph">Etapa 1 · Start</div><h3>Osnivanje i kvalifikacija</h3><p>Izuzetna dozvola po §8 HwO za odabrane oblasti, sertifikat G 607, prvi klijenti u oblasti tečnog gasa.</p></div>
+<div class="card"><div class="ph">Etapa 2 · Izgradnja</div><h3>Probni sto i servis ventila</h3><p>Probni sto za sigurnosne ventile i manometre, ovlašćeno lice po TRBS 1203, obuke proizvođača.</p></div>
+<div class="card"><div class="ph">Etapa 3 · Specijalizacija</div><h3>Medicinski gasovi i farmacija</h3><p>Servis armatura za medicinske gasove i GMP membranskih ventila, sa potrebnim ovlašćenjima.</p></div>
+</div></div></section>
+
+<section id="fragen"><div class="wrap">
+<div class="split"><div><div class="kicker">Vaše iskustvo</div><h2>Šta biste mi <span class="grad">vi</span> savetovali?</h2></div>
+<div><p class="lead">Osam pitanja za stručnjake iz prakse. Postoji i <a href="TechHafen_FluidLab_Fragebogen_A4.pdf" style="color:var(--cyan)">upitnik za štampu</a> (na nemačkom).</p></div></div>
+<div class="qs">
+<div class="q"><i>01</i>Koja ispitivanja medicinskih gasnih sistema se danas najčešće poveravaju spoljnim partnerima?</div>
+<div class="q"><i>02</i>Koje kvalifikacije i dokaze bolnice očekuju od partnera za ispitivanje?</div>
+<div class="q"><i>03</i>Gde su danas najveća uska grla: čekanje, rezervni delovi ili dokumentacija?</div>
+<div class="q"><i>04</i>Koje obuke proizvođača su neophodne za servis armatura za medicinske gasove?</div>
+<div class="q"><i>05</i>Da li u regionu Rajna-Majna postoji potreba za lokalnim probnim stolom za sigurnosne ventile i manometre?</div>
+<div class="q"><i>06</i>Koji model naplate je uobičajen: po komadu, paušalno ili ugovor o održavanju?</div>
+<div class="q"><i>07</i>Koju grešku početnik u ovoj oblasti svakako treba da izbegne?</div>
+<div class="q"><i>08</i>Sa kim bi trebalo obavezno da razgovaram sledeće?</div>
+</div></div></section>
+
+<section id="kontakt"><div class="wrap contact">
+<div><div class="kicker">Kontakt</div><h2>„Svaka dobra ispitna laboratorija počinje pravim <span class="grad">pitanjima</span>.“</h2>
+<p class="lead" style="margin-top:22px">Radujem se svakom savetu i svakom iskustvu.</p></div>
+<div class="card">
+<div class="kicker">TechHafen GmbH i.G.*</div>
+<h3 style="font-size:24px">Marko Jovicin</h3><p>Dipl. inž. mašinstva</p>
+<p class="big" style="margin-top:14px"><a href="tel:+4915122207744">☎&nbsp; +49 151 222 077 44</a><br><a href="mailto:marko.jovicin@icloud.com">✉&nbsp; marko.jovicin@icloud.com</a></p>
+<p style="color:var(--mute);margin-top:6px">Bad Homburg v. d. Höhe, Nemačka</p>
+</div></div></section>
+
+<footer><div class="wrap"><span>* Firma u osnivanju, još nije upisana u trgovinski registar.</span><span>© 2026 TechHafen FluidLab</span></div></footer>
+</body></html>

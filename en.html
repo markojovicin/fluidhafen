@@ -1,0 +1,196 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TechHafen FluidLab</title>
+<meta name="description" content="Test lab for pressure equipment · TechHafen GmbH i.G. · Bad Homburg, Germany">
+<link rel="icon" href="icon_white.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--deep:#06162d;--navy2:#123a6b;--cyan:#35d0e0;--mint:#7ff0d8;--ink:#e9f2fb;--mute:#9db4cf;--soft:#b5c8de;--line:rgba(255,255,255,.12)}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);line-height:1.5;
+ background:radial-gradient(1200px 800px at 90% -10%,rgba(53,208,224,.18),transparent 60%),radial-gradient(1000px 900px at -10% 60%,rgba(18,58,107,.7),transparent 70%),linear-gradient(175deg,#0d2a52 0%,#071a35 45%,#04101f 100%);background-color:var(--deep)}
+a{color:inherit}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.grad{background:linear-gradient(90deg,#fff 0%,var(--cyan) 60%,var(--mint) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:14px}
+h1{font-size:clamp(44px,7vw,92px);line-height:1;font-weight:800;letter-spacing:-.035em}
+h2{font-size:clamp(32px,4.4vw,56px);line-height:1.06;font-weight:800;letter-spacing:-.03em}
+h3{font-size:clamp(19px,1.6vw,22px);font-weight:700;margin-bottom:6px}
+.lead{font-size:clamp(17px,1.5vw,20px);color:#c9d9ec;max-width:640px}
+section{padding:clamp(56px,9vw,110px) 0;border-top:1px solid rgba(255,255,255,.06)}
+/* nav */
+nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(12px);background:rgba(6,22,45,.7);border-bottom:1px solid rgba(255,255,255,.06)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+nav img{height:34px}
+nav .links{display:flex;gap:26px;font-size:14px;color:var(--soft)}
+nav .links a{text-decoration:none}
+nav .links a:hover{color:#fff}
+.btn{display:inline-block;font-weight:600;font-size:15px;color:#04101f;background:var(--cyan);padding:12px 20px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.btn.o{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+/* hero */
+.hero{border:0;padding-top:clamp(40px,7vw,90px);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero .logo{width:min(440px,90%);margin-bottom:36px}
+.hero .lead{margin:28px 0 32px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.gauge{width:100%;max-width:460px;justify-self:end;opacity:.9}
+.meta{margin-top:40px;font-size:14px;color:var(--mute);letter-spacing:.04em}
+/* cards */
+.grid{display:grid;gap:18px;margin-top:44px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:20px;padding:26px}
+.card p{color:var(--soft);font-size:15.5px}
+.card .ix{font-size:14px;font-weight:800;color:var(--cyan);margin-bottom:14px;letter-spacing:.08em}
+.stat b{display:block;font-size:26px;font-weight:800;margin-bottom:4px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{border:1px solid rgba(53,208,224,.5);color:var(--cyan);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+.note{color:var(--mute);font-size:14px;margin-top:16px}
+.av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--navy2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;color:#04101f;margin-bottom:16px}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;position:relative}
+.tl .card{position:relative;padding-top:42px}
+.tl .card:before{content:"";position:absolute;top:22px;left:26px;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px rgba(53,208,224,.8)}
+.tl .ph{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:8px}
+/* questions */
+.qs{counter-reset:q;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px;margin-top:44px}
+.q{display:flex;gap:16px;padding:20px 22px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-weight:600;font-size:16.5px}
+.q i{font-style:normal;color:var(--cyan);font-weight:800;min-width:28px}
+/* contact */
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.contact .card{padding:34px}
+.contact .big{font-size:clamp(18px,1.8vw,22px);line-height:1.9}
+.contact .big a{text-decoration:none}
+.contact .big a:hover{color:var(--cyan)}
+footer{padding:34px 0 46px;color:var(--mute);font-size:13px;border-top:1px solid rgba(255,255,255,.06)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+/* responsive */
+@media (max-width:980px){
+ .g4{grid-template-columns:repeat(2,1fr)}.g3,.tl{grid-template-columns:1fr 1fr}
+ .split,.contact{grid-template-columns:1fr;gap:28px}
+ nav .links{display:none}
+}
+@media (max-width:760px){
+ .hero .wrap{grid-template-columns:1fr}
+ .gauge{display:none}
+ .qs{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+ .g2,.g3,.tl{grid-template-columns:1fr}
+ .g4{grid-template-columns:1fr 1fr;gap:12px}.g4 .card{padding:18px}.stat b{font-size:20px}
+ nav .btn{padding:9px 14px;font-size:13px}
+}
+.card img.ph{width:100%;aspect-ratio:4/4.4;object-fit:cover;object-position:50% 20%;border-radius:14px;margin-bottom:16px;display:block}
+.person{display:flex;gap:22px;align-items:center}.person img.ph{width:170px;flex:none;margin:0}
+@media (max-width:560px){.team{grid-template-columns:1fr}.person{flex-direction:column;align-items:stretch;gap:16px}.person img.ph{width:100%;aspect-ratio:1/1}}
+.banners{display:grid;gap:18px;margin-top:44px}
+.banner{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:2.7/1;background:#0d2348}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner .bt{position:absolute;left:0;top:0;bottom:0;width:38%;padding:clamp(20px,3vw,44px);display:flex;flex-direction:column;justify-content:center}
+.banner h3{font-size:clamp(24px,2.6vw,36px);font-weight:800;letter-spacing:-.02em}
+.banner p{color:var(--soft);font-size:clamp(14px,1.2vw,16.5px);margin-top:8px}
+@media (max-width:760px){.banner{aspect-ratio:auto}.banner img{position:static;height:240px;object-position:62% 30%}.banner .bt{position:static;width:auto;padding:22px}}
+.lang{display:flex;gap:4px;font-size:13px;font-weight:700;margin-left:auto;margin-right:12px}.lang a{padding:6px 9px;border-radius:8px;color:var(--mute);text-decoration:none}.lang a.on{color:#04101f;background:var(--cyan)}.lang a:not(.on):hover{color:#fff}
+</style></head><body>
+
+<nav><div class="wrap"><a href="#top"><img src="logo_white.png" alt="TechHafen FluidLab"></a>
+<div class="links"><a href="#idee">Idea</a><a href="#leistungen">Services</a><a href="#engineering">Engineering</a><a href="#medizingase">Medical gases</a><a href="#team">Team</a><a href="#fragen">Questions</a></div>
+<div class="lang"><a href="index.html" title="Deutsch">DE</a><a href="en.html" class="on" title="English">EN</a><a href="yu.html" title="Jugoslovenski">YU</a></div><a class="btn" href="#kontakt">Contact</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div>
+<div class="kicker">TechHafen GmbH i.G.* · Test lab for pressure equipment</div>
+<h1>Test.<br>Maintain.<br><span class="grad">Safe under pressure.</span></h1>
+<p class="lead">A small, precise test and service lab for fittings, valves and pressure gauges, with a focus on gases. Local to the Rhine-Main region.</p>
+<div class="cta"><a class="btn" href="TechHafen_FluidLab_Praesentation.pdf">Presentation (PDF, German)</a><a class="btn o" href="TechHafen_FluidLab_Fragebogen_A4.pdf">Questionnaire A4 (PDF, German)</a></div>
+<p class="meta">Bad Homburg, Germany · Marko Jovicin, Dipl.-Ing. Mechanical Engineering</p>
+</div>
+<svg class="gauge" viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#35d0e0"/><stop offset="1" stop-color="#7ff0d8"/></linearGradient></defs>
+<g fill="none" stroke="#35d0e0"><circle cx="200" cy="200" r="190" stroke-width="2" opacity=".35"/><circle cx="200" cy="200" r="160" stroke-width="1" stroke-dasharray="2 10" opacity=".6"/>
+<path d="M70 290 A150 150 0 1 1 330 290" stroke="url(#gg)" stroke-width="10" stroke-linecap="round"/>
+<line x1="200" y1="200" x2="300" y2="110" stroke-width="10" stroke-linecap="round"/><circle cx="200" cy="200" r="16" fill="#35d0e0"/></g></svg>
+</div></header>
+
+<section id="idee"><div class="wrap">
+<div class="split">
+<div><div class="kicker">The idea</div><h2>A <span class="grad">safe harbour</span> for everything under pressure.</h2></div>
+<div><p class="lead">Many operators wait weeks for safety valves, pressure regulators and gauges to be tested. Large testing companies are often far away.</p>
+<p class="lead" style="margin-top:16px;color:#fff;font-weight:600">My approach: local, fast, properly documented.</p></div>
+</div>
+<div class="grid g4">
+<div class="card stat"><b>Local</b><p>Rhine-Main, short distances, pick-up &amp; delivery</p></div>
+<div class="card stat"><b>Precise</b><p>Calibrated references, traceable reports</p></div>
+<div class="card stat"><b>Fast</b><p>Short turnaround instead of long waiting lists</p></div>
+<div class="card stat"><b>Personal</b><p>One contact from the first call to the test report</p></div>
+</div></div></section>
+
+<section id="leistungen"><div class="wrap">
+<div class="kicker">Planned services</div><h2>Testing &amp; service. <span class="grad">From one source.</span></h2>
+<div class="grid g3">
+<div class="card"><div class="ix">01</div><h3>Safety valves</h3><p>Set-pressure and leak-tightness testing on the test bench, adjustment, with test report.</p></div>
+<div class="card"><div class="ix">02</div><h3>Pressure regulators &amp; safety shut-off valves</h3><p>Repair, readjustment and function and leak testing of gas pressure regulators and safety shut-off valves.</p></div>
+<div class="card"><div class="ix">03</div><h3>Pressure gauges</h3><p>Comparison against a calibrated reference, documentation.</p></div>
+<div class="card"><div class="ix">04</div><h3>GMP diaphragm valves</h3><p>Diaphragm replacement for pharma and biotech, documented to customer requirements.</p></div>
+<div class="card"><div class="ix">05</div><h3>LPG in leisure vehicles</h3><p>Gas inspection to DVGW G 607 for motorhomes and caravans.</p></div>
+<div class="card"><div class="ix">06</div><h3>Gas installations &amp; compressed air</h3><p>Periodic and extraordinary inspections of LPG (propane/butane) and compressed-air systems. Natural gas systems in cooperation with a registered specialist contractor.<sup>1</sup></p></div>
+</div>
+<p class="note"><sup>1</sup> Services being set up. Their scope depends on the permits granted (exemption under §8 HwO, registration with the gas network operator).</p>
+<div style="margin-top:64px" id="engineering"><div class="kicker">Engineering</div><h2>Design that gets <span class="grad">built</span>.</h2></div>
+<div class="grid g3">
+<div class="card"><div class="ix">E1</div><h3>Process flow diagrams &amp; P&amp;ID</h3><p>Process schematics and P&amp;IDs for gas, compressed-air and process plants.</p></div>
+<div class="card"><div class="ix">E2</div><h3>BIM modelling</h3><p>3D models of plants and piping as a basis for design and coordination.</p></div>
+<div class="card"><div class="ix">E3</div><h3>As-built digital twin</h3><p>Survey and BIM model of the plant as built, as a basis for operation, maintenance and inspections.</p></div>
+</div></div></section>
+
+<section id="medizingase"><div class="wrap"><div class="split">
+<div><div class="kicker">Focus: medical gases</div><h2>Where testing decides <span class="grad">patient safety</span>.</h2>
+<div class="pills"><span class="pill">O₂</span><span class="pill">N₂O</span><span class="pill">Medical air</span><span class="pill">CO₂</span><span class="pill">Vacuum</span><span class="pill">ISO 7396-1</span><span class="pill">ISO 10524</span></div></div>
+<div><p class="lead">Medical gases set the highest demands on tightness, purity and documentation. That is exactly where I want to learn and specialise.</p>
+<div class="card" style="margin-top:24px"><h3>Possible starting points</h3><p>Safety valves in supply systems · Pressure regulators and terminal units · Gauges on cylinder manifolds · Support with periodic inspections</p></div>
+<p class="note">I would like to learn from you, as experts, which of these are realistic.</p></div>
+</div></div></section>
+
+<section id="team"><div class="wrap">
+<div class="kicker">Team</div><h2>Engineering know-how. <span class="grad">Hands-on skills.</span></h2>
+<div class="banners">
+<div class="banner"><img src="marko_wide.jpg" alt="Marko Jovicin"><div class="bt"><div class="kicker">Founder · Engineer</div><h3>Marko Jovicin</h3><p>Dipl.-Ing. in mechanical engineering. Hands-on experience in gas equipment service, including as service manager. Currently working full-time as an engineer.</p></div></div>
+<div class="banner"><img src="ljubisa_wide.jpg" alt="Ljubiša"><div class="bt"><div class="kicker">Technician</div><h3>Ljubiša</h3><p>Technician with experience in installation and service. Supports testing and on-site work.</p></div></div>
+</div>
+<div class="grid g2">
+<div class="card stat"><b>Step by step</b><p>Starting as a side business, growing with every satisfied customer.</p></div>
+<div class="card stat"><b>Done by the book</b><p>Chamber of Crafts, certifications and training from day one.</p></div>
+</div>
+<div style="margin-top:72px"><div class="kicker">Roadmap</div><h2>Three stages to the <span class="grad">test lab.</span></h2></div>
+<div class="tl">
+<div class="card"><div class="ph">Stage 1 · Start</div><h3>Founding &amp; qualification</h3><p>Exemption under §8 HwO for selected sub-areas, G 607 certification, first customers in LPG.</p></div>
+<div class="card"><div class="ph">Stage 2 · Build-up</div><h3>Test bench &amp; valve service</h3><p>Test bench for safety valves and gauges, qualified person under TRBS 1203, manufacturer training.</p></div>
+<div class="card"><div class="ph">Stage 3 · Specialisation</div><h3>Medical gases &amp; pharma</h3><p>Service for medical gas fittings and GMP diaphragm valves, with the required authorisations.</p></div>
+</div></div></section>
+
+<section id="fragen"><div class="wrap">
+<div class="split"><div><div class="kicker">Your expertise</div><h2>What would <span class="grad">you</span> advise me?</h2></div>
+<div><p class="lead">Eight questions for practitioners. Also available as a <a href="TechHafen_FluidLab_Fragebogen_A4.pdf" style="color:var(--cyan)">printable questionnaire</a> (German).</p></div></div>
+<div class="qs">
+<div class="q"><i>01</i>Which tests on medical gas systems are most often outsourced to external partners today?</div>
+<div class="q"><i>02</i>What qualifications and certificates do hospitals expect from a testing partner?</div>
+<div class="q"><i>03</i>Where are the biggest bottlenecks today: waiting times, spare parts or documentation?</div>
+<div class="q"><i>04</i>Which manufacturer trainings are essential for servicing medical gas fittings?</div>
+<div class="q"><i>05</i>Is there demand in the Rhine-Main region for a local test bench for safety valves and gauges?</div>
+<div class="q"><i>06</i>Which billing model is usual: per item, flat rate or maintenance contract?</div>
+<div class="q"><i>07</i>Which mistake should a new founder in this field avoid at all costs?</div>
+<div class="q"><i>08</i>Who should I definitely talk to next?</div>
+</div></div></section>
+
+<section id="kontakt"><div class="wrap contact">
+<div><div class="kicker">Contact</div><h2>“Every good test lab starts with the right <span class="grad">questions</span>.”</h2>
+<p class="lead" style="margin-top:22px">I welcome every tip and every experience you can share.</p></div>
+<div class="card">
+<div class="kicker">TechHafen GmbH i.G.*</div>
+<h3 style="font-size:24px">Marko Jovicin</h3><p>Dipl.-Ing. Mechanical Engineering</p>
+<p class="big" style="margin-top:14px"><a href="tel:+4915122207744">☎&nbsp; +49 151 222 077 44</a><br><a href="mailto:marko.jovicin@icloud.com">✉&nbsp; marko.jovicin@icloud.com</a></p>
+<p style="color:var(--mute);margin-top:6px">Bad Homburg v. d. Höhe, Germany</p>
+</div></div></section>
+
+<footer><div class="wrap"><span>* Company in formation, not yet entered in the commercial register.</span><span>© 2026 TechHafen FluidLab</span></div></footer>
+</body></html>
